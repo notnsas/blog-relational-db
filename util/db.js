@@ -2,12 +2,12 @@ const Sequelize = require('sequelize')
 const { DATABASE_URL, TEST_DATABASE_URL } = require('./config')
 
 const getDbUrl = () => {
-  if (process.env.TESTING) {
-    console.log("tseting");
-    return TEST_DATABASE_URL
-  } else {
+  if (!process.env.TESTING) {
     console.log('ga testing')
     return DATABASE_URL
+  } else {
+    console.log("tseting");
+    return TEST_DATABASE_URL
   }
 }
 
