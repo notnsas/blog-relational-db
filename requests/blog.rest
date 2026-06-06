@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:3001
+
+### Get all blogs
+GET {{baseUrl}}/api/blogs
+Content-Type: application/json
+
+### Get blog by id
+GET {{baseUrl}}/api/blogs/1
+Content-Type: application/json
+
+### Create a new blog
+POST {{baseUrl}}/api/blogs
+Content-Type: application/json
+
+{
+  "author": "John Doe",
+  "title": "My second Blog",
+  "url": "https://example.com/my-second-blog",
+  "likes": 0
+}
+
+### Update blog (PUT)
+PUT {{baseUrl}}/api/blogs/1
+Content-Type: application/json
+
+{
+  "likes": 1
+}
+
+### 

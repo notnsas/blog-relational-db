@@ -1,0 +1,79 @@
+### Create User
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "nara",
+  "name": "Nara",
+  "password": "secret123"
+}
+### Create User
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "notnsa@gmail.com",
+  "name": "notnsasss",
+  "password": "secret123"
+}
+
+###
+
+### Login
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "nara",
+  "password": "secret123"
+}
+
+###
+PUT http://localhost:3001/api/users/nra_agakb aru
+Content-Type: application/json
+Authorization: Bearer eyddJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmEiLCJpZCI6MSwiaWF0IjoxNzgwNzM5MDAyfQ.ZrgpIyrwR32dL9pWlxWlug1-LWBWKTjyDOLYfHHazmQ
+
+{
+"username": "nara"
+}
+###
+POST http://localhost:3001/api/reset
+###
+
+### Create Blog (replace TOKEN)
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmEiLCJpZCI6MSwiaWF0IjoxNzgwNzM5MDAyfQ.ZrgpIyrwR32dL9pWlxWlug1-LWBWKTjyDOLYfHHazmQ
+
+{
+  "author": "Nara",
+  "url": "https://example.com/blog-1",
+  "title": "ww",
+  "likes": 0
+}
+
+###
+
+### Get All Blogs
+GET http://localhost:3001/api/blogs
+
+###
+
+### Get Blog By ID
+GET http://localhost:3001/api/blogs/1
+
+###
+
+### Update Likes
+PUT http://localhost:3001/api/blogs/1
+Content-Type: application/json
+
+{
+  "likes": 10
+}
+
+###
+
+### Delete Blog
+DELETE http://localhost:3001/api/blogs/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmEiLCJpZCI6MSwiaWF0IjoxNzgwNzM5MDAyfQ.ZrgpIyrwR32dL9pWlxWlug1-LWBWKTjyDOLYfHHazmQ

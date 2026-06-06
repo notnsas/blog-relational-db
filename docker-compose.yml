@@ -1,0 +1,54 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=mydb
+    container_name: postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/18/data
+    ports:
+      - 5432:5432
+  
+  postgres-test:
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=test-db
+    container_name: postgres-test
+    volumes:
+      - pgdata-test:/var/lib/postgresql/18/data
+    ports:
+      - 5434:5432
+
+volumes:
+  pgdata:
+  pgdata-test:
+  # app:
+  #   image: bloglist-front
+  #   build:
+  #     context: ./client # The context will pick this directory as the "build context"
+  #     dockerfile: Dockerfile # This will simply tell which dockerfile to read
+  #   container_name: bloglist-front # This will name the container hello-front-dev
+
+  # backend:
+  #   image: bloglist-backend
+  #   build:
+  #     context: ./server # The context will pick this directory as the "build context"
+  #     dockerfile: Dockerfile # This will simply tell which dockerfile to read
+  #   # volumes:
+  #   #   - ./bloglist-backend/:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
+  #   container_name: bloglist-backend # This will name the container hello-front-dev
+
+  # nginx:
+  #   image: nginx:1.29
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  #   ports:
+  #     - 8080:80
+  #   container_name: reverse-proxy
+  #   depends_on:
+  #     - app # wait for the frontend container to be started
+  #     - backend
