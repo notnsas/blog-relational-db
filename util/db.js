@@ -4,7 +4,7 @@ const { DATABASE_URL, TEST_DATABASE_URL } = require('./config')
 const getDbUrl = () => {
   if (!process.env.TESTING) {
     console.log('ga testing')
-    return DATABASE_URL
+    return DATABASE_URL ? DATABASE_URL : TEST_DATABASE_URL
   } else {
     console.log("tseting");
     return TEST_DATABASE_URL
@@ -13,10 +13,6 @@ const getDbUrl = () => {
 
 const sequelize = new Sequelize(getDbUrl(), {
     dialectOptions: {
-      // ssl: {
-      //   require: true,
-      //   rejectUnauthorized: false
-      // }
     },
   }
 )
