@@ -1,9 +1,16 @@
 const Sequelize = require('sequelize')
 const { Umzug, SequelizeStorage } = require('umzug')
 
-const { DATABASE_URL } = require('./config')
+const { DATABASE_URL, TEST_DATABASE_URL } = require('./config')
 
-const sequelize = new Sequelize(DATABASE_URL, {
+if (process.env.TESTING) {
+  console.log('Using test database')
+  SEQUELIZE_DATABASE_URL = TEST_DATABASE_URL
+} else {
+  SEQUELIZE_DATABASE_URL = DATABASE_URL
+  console.log('Using production database')
+}
+const sequelize = new Sequelize(SEQUELIZE_DATABASE_URL, {
   dialectOptions: {
   },
 })
