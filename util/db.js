@@ -3,7 +3,7 @@ const { Umzug, SequelizeStorage } = require('umzug')
 
 const { DATABASE_URL, TEST_DATABASE_URL } = require('./config')
 
-if (process.env.TESTING) {
+if (process.env.TESTING === 'true' || !DATABASE_URL) {
   console.log('Using test database')
   SEQUELIZE_DATABASE_URL = TEST_DATABASE_URL
 } else {
