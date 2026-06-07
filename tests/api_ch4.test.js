@@ -32,13 +32,16 @@ before(async () => {
 
 describe('Reading Lists API', () => {
   it('can add a blog to reading list', async () => {
+    console.log('starting')
     const readingListEntry = {
       blogId: createdBlogId,
       userId: testData.users[0].id
     }
+    console.log('reading list entry', readingListEntry)
     
     const response = await axios.post(`${baseUrl}/readinglists`, readingListEntry)
-    
+    console.log('can add blogs to read list response.data', response.data)
+    console.log('readingListEntry', readingListEntry)
     assert.ok([200, 201].includes(response.status))
     assert.strictEqual(response.data.blog_id, createdBlogId)
     assert.strictEqual(response.data.user_id, testData.users[0].id)
@@ -184,6 +187,7 @@ describe('Reading Lists API', () => {
       )
       assert.fail('Should have thrown an error')
     } catch (error) {
+      
       assert.strictEqual(error.response.status, 401)
     }
   })

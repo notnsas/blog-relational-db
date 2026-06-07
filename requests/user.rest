@@ -3,8 +3,16 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-  "username": "nara",
+  "username": "nara@gmail.com",
   "name": "Nara",
+  "password": "secret123"
+}
+### Create User
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "nara@gmail.com",
   "password": "secret123"
 }
 ### Create User
@@ -24,14 +32,14 @@ POST http://localhost:3001/api/login
 Content-Type: application/json
 
 {
-  "username": "nara",
+  "username": "notnsa@gmail.com",
   "password": "secret123"
 }
 
 ###
-PUT http://localhost:3001/api/users/nra_agakb aru
+PUT http://localhost:3001/api/users/notnsa@gmail.com
 Content-Type: application/json
-Authorization: Bearer eyddJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmEiLCJpZCI6MSwiaWF0IjoxNzgwNzM5MDAyfQ.ZrgpIyrwR32dL9pWlxWlug1-LWBWKTjyDOLYfHHazmQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5vdG5zYUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNzgwNzY1MTE3fQ.wNnDzfUrJ2fKIyEYmc7rQdEm5lDWOfuv15l0zjKD2XE
 
 {
 "username": "nara"
@@ -43,14 +51,20 @@ POST http://localhost:3001/api/reset
 ### Create Blog (replace TOKEN)
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmEiLCJpZCI6MSwiaWF0IjoxNzgwNzM5MDAyfQ.ZrgpIyrwR32dL9pWlxWlug1-LWBWKTjyDOLYfHHazmQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmFAZ21haWwuY29tIiwiaWQiOjIsImlhdCI6MTc4MDgyNTU3OX0.8ZSOFMGxESgoT05h1WktO2wLlGOpQPWQMsthexYc5Mg
 
 {
   "author": "Nara",
   "url": "https://example.com/blog-1",
-  "title": "ww",
-  "likes": 0
+  "title": "aasasasaaaaa",
+  "likes": 0,
+  "year": 2023
 }
+### Create Blog (replace TOKEN)
+POST http://localhost:3001/api/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmFAZ21haWwuY29tIiwiaWQiOjIsImlhdCI6MTc4MDgyNTU3OX0.8ZSOFMGxESgoT05h1WktO2wLlGOpQPWQMsthexYc5Mg
+
 
 ###
 

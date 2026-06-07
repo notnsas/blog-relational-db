@@ -1,0 +1,19 @@
+POST http://localhost:3001/api/readinglists
+Content-Type: application/json
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5vdG5zYUBnbWFpbC5jb20iLCJpZCI6MSwiaWF0IjoxNzgwODIxNTUzfQ.MBjapSqp1Lm2OmkW5cbaX70O3BZfmfqVRW5aVGg8HYc
+
+{
+  "blogId": 100,
+  "userId": 2,
+  "read": false
+}
+
+###
+PUT http://localhost:3001/api/readinglists/9999
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmFAZ21haWwuY29tIiwiaWQiOjQsImlhdCI6MTc4MDgzMDIwNX0.tYFwL7mYPYavtBiyeIkJdsyPww6dji0g_dv_JBBmTrk
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5hcmFAZ21haWwuY29tIiwiaWQiOjIsImlhdCI6MTc4MDgyMzE4OX0.usm0EduSoP9WMviYZz451J9Cduf5w0D0qVyU2kPX67U
+
+{
+  "read": true
+}
